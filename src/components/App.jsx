@@ -18,6 +18,8 @@ import { Container } from './App.styled';
 import { Layout } from './Layout';
 import Register from 'pages/Register';
 import Login from 'pages/Login';
+import Home from 'pages/Home';
+import Contacts from 'pages/Contacts';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -40,7 +42,8 @@ const App = () => {
     <Container>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="contacts" element={<div>Contacts</div>} />
+          <Route index element={<Home />} />
+          <Route path="contacts" element={<Contacts />} />
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
         </Route>

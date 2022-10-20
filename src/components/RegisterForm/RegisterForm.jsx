@@ -35,7 +35,7 @@ export const RegisterForm = () => {
             <Field id="username" type="text" name="username" />
             <ErrorMessage name="username" component="div" />
 
-            <label htmlFor="email">E-mail</label>
+            <label htmlFor="email">Email</label>
             <Field id="email" type="email" name="email" />
             <ErrorMessage name="email" component="div" />
 
