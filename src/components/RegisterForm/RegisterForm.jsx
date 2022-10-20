@@ -1,10 +1,12 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Container } from 'components/App.styled';
+import { SignUp } from 'redux/auth/authOperations';
 
 const ValidationSchema = Yup.object().shape({
-  username: Yup.string().required('This field is required'),
+  name: Yup.string().required('This field is required'),
   email: Yup.string()
     .email('Invalid email format')
     .required('This field is required'),
@@ -14,8 +16,10 @@ const ValidationSchema = Yup.object().shape({
 });
 
 export const RegisterForm = () => {
+  const dispatch = useDispatch();
   const handleSubmmit = (values, { setSubmitting, resetForm }) => {
     console.log(values);
+    dispatch(SignUp(values));
     setSubmitting(false);
     resetForm();
   };
@@ -24,7 +28,7 @@ export const RegisterForm = () => {
     <Container>
       <Formik
         validationSchema={ValidationSchema}
-        initialValues={{ username: '', email: '', password: '' }}
+        initialValues={{ name: '', email: '', password: '' }}
         onSubmit={handleSubmmit}
       >
         {({ isSubmitting }) => (
@@ -32,9 +36,9 @@ export const RegisterForm = () => {
             autoComplete="off"
             style={{ display: 'flex', flexDirection: 'column' }}
           >
-            <label htmlFor="username">Username</label>
-            <Field id="username" type="text" name="username" />
-            <ErrorMessage name="username" component="div" />
+            <label htmlFor="name">Username</label>
+            <Field id="name" type="text" name="name" />
+            <ErrorMessage name="name" component="div" />
 
             <label htmlFor="email">Email</label>
             <Field id="email" type="email" name="email" />
