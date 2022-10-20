@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { Container } from 'components/App.styled';
 
 const ValidationSchema = Yup.object().shape({
   username: Yup.string().required('This field is required'),
@@ -20,7 +21,7 @@ export const RegisterForm = () => {
   };
 
   return (
-    <div>
+    <Container>
       <Formik
         validationSchema={ValidationSchema}
         initialValues={{ username: '', email: '', password: '' }}
@@ -52,6 +53,6 @@ export const RegisterForm = () => {
           </Form>
         )}
       </Formik>
-    </div>
+    </Container>
   );
 };

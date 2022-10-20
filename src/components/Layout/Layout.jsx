@@ -4,9 +4,14 @@ import { AppBar } from 'components/AppBar';
 
 export const Layout = () => {
   return (
-    <div>
+    <>
       <AppBar />
-      <Outlet />
-    </div>
+      <main style={{ minHeight: '100vh' }}>
+        <Outlet />
+      </main>
+      <footer style={{ padding: '20px', backgroundColor: 'grey' }}>
+        <p>Copiright</p>
+      </footer>
+    </>
   );
 };

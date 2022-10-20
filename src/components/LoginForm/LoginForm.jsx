@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { Container } from 'components/App.styled';
 
 const ValidationSchema = Yup.object().shape({
   email: Yup.string()
@@ -19,7 +20,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <div>
+    <Container>
       <Formik
         validationSchema={ValidationSchema}
         initialValues={{ email: '', password: '' }}
@@ -47,6 +48,6 @@ export const LoginForm = () => {
           </Form>
         )}
       </Formik>
-    </div>
+    </Container>
   );
 };

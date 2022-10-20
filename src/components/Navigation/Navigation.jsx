@@ -11,7 +11,7 @@ export const Navigation = () => {
         <NavLink to="/">Home</NavLink>
       )} */}
       <NavLink to="/">Home</NavLink>
-      {false && <NavLink to="/contacts">Contacts</NavLink>}
+      {true && <NavLink to="/contacts">Contacts</NavLink>}
       {false ? (
         <UserMenu />
       ) : (
