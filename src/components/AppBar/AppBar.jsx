@@ -5,7 +5,7 @@ export const AppBar = () => {
   return (
     <header
       style={{
-        padding: '10px',
+        padding: '15px',
         backgroundColor: 'lightgray',
       }}
     >

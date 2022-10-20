@@ -9,10 +9,10 @@ export const Navigation = () => {
       {false ? (
         <UserMenu />
       ) : (
-        <>
+        <div style={{ display: 'flex', gap: '20px', marginLeft: 'auto' }}>
           <NavLink to="/register">Register</NavLink>
           <NavLink to="/login">Login</NavLink>
-        </>
+        </div>
       )}
     </nav>
   );
