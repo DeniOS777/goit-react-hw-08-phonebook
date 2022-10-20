@@ -8,12 +8,15 @@ import 'react-toastify/dist/ReactToastify.css';
 import App from 'components/App';
 import { GlobalStyle } from './components/GlobalStyle';
 import { theme } from './constants';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        <App />
+        <BrowserRouter basename="/goit-react-hw-08-phonebook">
+          <App />
+        </BrowserRouter>
       </Provider>
       <GlobalStyle />
       <ToastContainer autoClose={2000} />

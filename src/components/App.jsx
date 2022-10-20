@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ContactForm from './ContactForm';
@@ -13,6 +14,10 @@ import { fetchContacts } from 'redux/contacts/contactsOperations';
 import { Loader } from './Loader';
 import { ErrorMessage } from 'components/ErrorMessage';
 import { Container } from './App.styled';
+
+import { Layout } from './Layout';
+import Register from 'pages/Register';
+import Login from 'pages/Login';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,6 +38,13 @@ const App = () => {
 
   return (
     <Container>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="contacts" element={<div>Contacts</div>} />
+          <Route path="register" element={<Register />} />
+          <Route path="login" element={<Login />} />
+        </Route>
+      </Routes>
       <Box as="h1" mb={5}>
         Phonebook ☎️
       </Box>
