@@ -1,14 +1,14 @@
 import React from 'react';
 import { FaUserCheck } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
-import { LogOut } from 'redux/auth/authOperations';
+import { logOut } from 'redux/auth/authOperations';
 import { selectorUserName } from 'redux/auth/authSelectors';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const userName = useSelector(selectorUserName);
 
-  const logoutUser = () => dispatch(LogOut());
+  const logOutUser = () => dispatch(logOut());
 
   return (
     <div
@@ -29,7 +29,7 @@ export const UserMenu = () => {
           backgroundColor: 'transparent',
         }}
         type="button"
-        onClick={logoutUser}
+        onClick={logOutUser}
       >
         Logout
       </button>

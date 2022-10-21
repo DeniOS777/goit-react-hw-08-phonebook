@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-// import { useEffect, useRef } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 // import ContactForm from './ContactForm';
 // import ContactList from './ContactList';
 // import Filter from './Filter';
@@ -20,21 +20,19 @@ import Register from 'pages/Register';
 import Login from 'pages/Login';
 import Home from 'pages/Home';
 import Contacts from 'pages/Contacts';
+import { refreshUser } from 'redux/auth/authOperations';
 
 const App = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // const contacts = useSelector(selectorContacts);
   // const isLoading = useSelector(selectorIsLoading);
   // const error = useSelector(selectorError);
 
   // const isFirstLoading = useRef(true);
 
-  // useEffect(() => {
-  //   dispatch(fetchContacts()).then(res => {
-  //     if (res.meta.requestStatus === 'fulfilled')
-  //       isFirstLoading.current = false;
-  //   });
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
 
   // const hasContacts = contacts.length > 0 && !error;
 

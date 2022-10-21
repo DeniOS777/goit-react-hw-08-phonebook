@@ -11,8 +11,8 @@ const clearToken = () => {
   axios.defaults.headers.common.Authorization = '';
 };
 
-export const SignUp = createAsyncThunk(
-  'user/signup',
+export const signUp = createAsyncThunk(
+  'auth/signup',
   async (credentials, thunkAPI) => {
     try {
       const { data } = await axios.post('/users/signup', credentials);
@@ -24,8 +24,8 @@ export const SignUp = createAsyncThunk(
   }
 );
 
-export const LogIn = createAsyncThunk(
-  '/user/login',
+export const logIn = createAsyncThunk(
+  'auth/login',
   async (credentials, thunkAPI) => {
     try {
       const { data } = await axios.post('/users/login', credentials);
@@ -37,7 +37,7 @@ export const LogIn = createAsyncThunk(
   }
 );
 
-export const LogOut = createAsyncThunk('/user/logout', async (_, thunkAPI) => {
+export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await axios.post('/users/logout');
     clearToken();
@@ -45,3 +45,23 @@ export const LogOut = createAsyncThunk('/user/logout', async (_, thunkAPI) => {
     return thunkAPI.rejectWithValue(error.message);
   }
 });
+
+export const refreshUser = createAsyncThunk(
+  'auth/refresh',
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistToken = state.auth.token;
+
+    if (persistToken === null) {
+      return thunkAPI.rejectWithValue('This user not found.');
+    }
+
+    try {
+      setToken(persistToken);
+      const { data } = await axios.get('/users/current');
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
