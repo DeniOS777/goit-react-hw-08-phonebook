@@ -9,8 +9,16 @@ export const Layout = () => {
       <main style={{ minHeight: '100vh' }}>
         <Outlet />
       </main>
-      <footer style={{ padding: '20px', backgroundColor: 'grey' }}>
-        <p>Copiright</p>
+      <footer
+        style={{
+          padding: '30px',
+          backgroundColor: '#303846',
+          textAlign: 'center',
+        }}
+      >
+        <p style={{ color: '#fff' }}>
+          Copyright &copy; 2022. Developed by Denis Moskalenko
+        </p>
       </footer>
     </>
   );
