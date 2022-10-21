@@ -1,18 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { UserMenu } from 'components/UserMenu';
+import { useSelector } from 'react-redux';
+import { selectorLoggedIn } from 'redux/auth/authSelectors';
 
 export const Navigation = () => {
+  const isLoggedIn = useSelector(selectorLoggedIn);
+
   return (
     <nav style={{ display: 'flex', gap: '20px' }}>
-      {/* {true ? (
-        <NavLink to="/contacts">Contacts</NavLink>
-      ) : (
-        <NavLink to="/">Home</NavLink>
-      )} */}
       <NavLink to="/">Home</NavLink>
-      {true && <NavLink to="/contacts">Contacts</NavLink>}
-      {false ? (
+      {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
+      {isLoggedIn ? (
         <UserMenu />
       ) : (
         <div style={{ display: 'flex', gap: '20px', marginLeft: 'auto' }}>

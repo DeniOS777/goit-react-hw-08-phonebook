@@ -11,9 +11,11 @@ const ContactItem = ({ id, name, number, clearFilter }) => {
   const [isDeleting, setIsDeleting] = useState(false);
   const dispatch = useDispatch();
 
-  const handleDeletingContact = id => {
+  const handleDeletingContact = () => {
+    console.log(id);
     setIsDeleting(true);
     dispatch(deleteContact(id)).then(res => {
+      console.log(res);
       if (res.meta.requestStatus === 'fulfilled') {
         toast.success(`The contact named ${name} deleted successfully`);
         clearFilter();
@@ -30,7 +32,7 @@ const ContactItem = ({ id, name, number, clearFilter }) => {
       {isDeleting ? (
         <Loader height="35" />
       ) : (
-        <ContactDelete onClick={() => handleDeletingContact(id)} type="button">
+        <ContactDelete onClick={handleDeletingContact} type="button">
           <VscTrash />
         </ContactDelete>
       )}

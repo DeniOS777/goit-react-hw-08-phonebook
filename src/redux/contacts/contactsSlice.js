@@ -13,8 +13,10 @@ export const itemsSlice = createSlice({
 
     [addContact.fulfilled]: (state, { payload }) => [...state, payload],
 
-    [deleteContact.fulfilled]: (state, { payload }) =>
-      state.filter(contact => contact.id !== payload.id),
+    [deleteContact.fulfilled]: (state, { payload }) => {
+      console.log(payload.id);
+      state.filter(contact => contact.id !== payload.id);
+    },
   },
 });
 
