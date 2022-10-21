@@ -24,12 +24,12 @@ const ContactList = () => {
 
   return (
     <ContactsList>
-      {filteredContacts.map(({ id, name, phone }) => (
+      {filteredContacts.map(({ id, name, number }) => (
         <ContactItem
           key={id}
           id={id}
           name={name}
-          phone={phone}
+          number={number}
           clearFilter={clearFilter}
         />
       ))}

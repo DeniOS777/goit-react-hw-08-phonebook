@@ -7,7 +7,7 @@ import { ContactsItem, ContactName, ContactDelete } from './ContactItem.styled';
 import { VscTrash } from 'react-icons/vsc';
 import { Loader } from 'components/Loader';
 
-const ContactItem = ({ id, name, phone, clearFilter }) => {
+const ContactItem = ({ id, name, number, clearFilter }) => {
   const [isDeleting, setIsDeleting] = useState(false);
   const dispatch = useDispatch();
 
@@ -24,7 +24,7 @@ const ContactItem = ({ id, name, phone, clearFilter }) => {
   return (
     <ContactsItem>
       <ContactName>
-        {name}: <a href="tel:">{phone}</a>
+        {name}: <a href="tel:">{number}</a>
       </ContactName>
 
       {isDeleting ? (
@@ -41,7 +41,7 @@ const ContactItem = ({ id, name, phone, clearFilter }) => {
 ContactItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
   clearFilter: PropTypes.func.isRequired,
 };
 

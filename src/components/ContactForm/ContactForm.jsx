@@ -17,7 +17,7 @@ import {
 
 const ContactForm = () => {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
   const [isAdding, setIsAdding] = useState(false);
 
   const dispatch = useDispatch();
@@ -32,8 +32,8 @@ const ContactForm = () => {
       case 'name':
         setName(value);
         break;
-      case 'phone':
-        setPhone(value);
+      case 'number':
+        setNumber(value);
         break;
       default:
         throw new Error('This field doesn`t exist');
@@ -53,7 +53,7 @@ const ContactForm = () => {
       return alreadyHasContactNotification(name);
     }
 
-    dispatch(addContact({ name, phone })).then(res => {
+    dispatch(addContact({ name, number })).then(res => {
       if (res.meta.requestStatus === 'fulfilled') {
         successfullyAddedContactNotification(name);
         setIsAdding(false);
@@ -64,7 +64,7 @@ const ContactForm = () => {
 
   const resetForm = () => {
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   function successfullyAddedContactNotification(name) {
@@ -100,8 +100,8 @@ const ContactForm = () => {
           id={inputNumberId}
           placeholder="Enter number..."
           type="tel"
-          name="phone"
-          value={phone}
+          name="number"
+          value={number}
           onChange={handleChange}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"

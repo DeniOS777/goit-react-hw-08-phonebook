@@ -23,3 +23,16 @@ export const SignUp = createAsyncThunk(
     }
   }
 );
+
+export const LogIn = createAsyncThunk(
+  '/user/login',
+  async (credentials, thunkAPI) => {
+    try {
+      const { data } = await axios.post('/users/login', credentials);
+      setToken(data.token);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
