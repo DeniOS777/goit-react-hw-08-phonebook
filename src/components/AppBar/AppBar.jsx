@@ -1,15 +1,11 @@
-import { Navigation } from 'components/Navigation';
 import React from 'react';
+import { Navigation } from 'components/Navigation';
+import { Header } from './AppBar.styled';
 
 export const AppBar = () => {
   return (
-    <header
-      style={{
-        padding: '15px',
-        backgroundColor: 'lightgray',
-      }}
-    >
+    <Header>
       <Navigation />
-    </header>
+    </Header>
   );
 };

@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Layout } from 'components/Layout';
@@ -16,16 +16,15 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    // <Container>
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
+        <Route path="home" element={<Home />} />
         <Route path="contacts" element={<Contacts />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
+        <Route path="*" element={<Navigate to="/home" />} />
       </Route>
     </Routes>
-    // </Container>
   );
 };
 

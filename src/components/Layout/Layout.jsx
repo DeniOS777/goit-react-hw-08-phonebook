@@ -4,9 +4,11 @@ import { AppBar } from 'components/AppBar';
 
 export const Layout = () => {
   return (
-    <>
+    <div
+      style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}
+    >
       <AppBar />
-      <main style={{ minHeight: '100vh' }}>
+      <main style={{ flexGrow: '1' }}>
         <Outlet />
       </main>
       <footer
@@ -20,6 +22,6 @@ export const Layout = () => {
           Copyright &copy; 2022. Developed by Denis Moskalenko
         </p>
       </footer>
-    </>
+    </div>
   );
 };
