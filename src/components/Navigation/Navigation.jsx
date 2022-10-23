@@ -1,5 +1,4 @@
 import React from 'react';
-// import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { UserMenu } from 'components/UserMenu';
 import { selectorLoggedIn } from 'redux/auth/authSelectors';

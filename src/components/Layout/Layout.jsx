@@ -1,4 +1,4 @@
-import React from 'react';
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { AppBar } from 'components/AppBar';
 
@@ -8,9 +8,13 @@ export const Layout = () => {
       style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}
     >
       <AppBar />
+
       <main style={{ flexGrow: '1' }}>
-        <Outlet />
+        <Suspense fallback={null}>
+          <Outlet />
+        </Suspense>
       </main>
+
       <footer
         style={{
           padding: '30px',

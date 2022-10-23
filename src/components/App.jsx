@@ -1,12 +1,13 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { Layout } from 'components/Layout';
-import Register from 'pages/Register';
-import Login from 'pages/Login';
-import Home from 'pages/Home';
-import Contacts from 'pages/Contacts';
 import { refreshUser } from 'redux/auth/authOperations';
+
+const Home = lazy(() => import('pages/Home'));
+const Contacts = lazy(() => import('pages/Contacts'));
+const Register = lazy(() => import('pages/Register'));
+const Login = lazy(() => import('pages/Login'));
 
 const App = () => {
   const dispatch = useDispatch();
