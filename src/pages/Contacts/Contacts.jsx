@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet';
 import { useSelector, useDispatch } from 'react-redux';
 import ContactForm from 'components/ContactForm';
 import ContactList from 'components/ContactList';
@@ -33,6 +34,10 @@ const Contacts = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>Contacts</title>
+      </Helmet>
+
       <Box as="h1" mb={5}>
         Phonebook ☎️
       </Box>
