@@ -1,13 +1,13 @@
 import React from 'react';
 // import { FaUserCheck } from 'react-icons/fa';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/authOperations';
-import { selectorUserName } from 'redux/auth/authSelectors';
+import { useAuth } from 'hooks';
 import { Wrap, Button } from './UserMenu.styled';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
-  const userName = useSelector(selectorUserName);
+  const { userName } = useAuth();
 
   const logOutUser = () => dispatch(logOut());
 
