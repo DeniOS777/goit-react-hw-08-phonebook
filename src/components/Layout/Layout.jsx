@@ -1,12 +1,12 @@
 import { Suspense } from 'react';
+import { BsGithub } from 'react-icons/bs';
 import { Outlet } from 'react-router-dom';
 import { AppBar } from 'components/AppBar';
+import { Wrapper, Footer, Text, Link } from './Layout.styled';
 
 export const Layout = () => {
   return (
-    <div
-      style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}
-    >
+    <Wrapper>
       <AppBar />
 
       <main style={{ flexGrow: '1' }}>
@@ -15,17 +15,19 @@ export const Layout = () => {
         </Suspense>
       </main>
 
-      <footer
-        style={{
-          padding: '30px',
-          backgroundColor: '#303846',
-          textAlign: 'center',
-        }}
-      >
-        <p style={{ color: '#fff' }}>
-          Copyright &copy; 2022. Developed by Denis Moskalenko
-        </p>
-      </footer>
-    </div>
+      <Footer>
+        <Text>
+          Copyright &copy; 2022.
+          <Link
+            href="https://github.com/DeniOS777"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BsGithub size="20" />
+          </Link>
+          Developed by Denis Moskalenko
+        </Text>
+      </Footer>
+    </Wrapper>
   );
 };
