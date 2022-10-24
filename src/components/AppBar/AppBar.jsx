@@ -1,11 +1,13 @@
 import React from 'react';
 import { Navigation } from 'components/Navigation';
-import { Header } from './AppBar.styled';
+import { Container, Header } from './AppBar.styled';
 
 export const AppBar = () => {
   return (
     <Header>
-      <Navigation />
+      <Container>
+        <Navigation />
+      </Container>
     </Header>
   );
 };
