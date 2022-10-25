@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 32px;
+  padding-bottom: 32px;
   padding-left: 16px;
   padding-right: 16px;
   margin: 0 auto;

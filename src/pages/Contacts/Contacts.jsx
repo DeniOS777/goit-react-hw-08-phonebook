@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import ContactForm from 'components/ContactForm';
 import ContactList from 'components/ContactList';
 import Filter from 'components/Filter';
-import { Box } from 'components/Box';
 import {
   selectorContacts,
   selectorError,
@@ -31,6 +30,7 @@ const Contacts = () => {
   }, [dispatch]);
 
   const hasContacts = contacts.length > 0 && !error;
+  const shouldShowLoader = isLoading && isFirstLoading.current;
 
   return (
     <Container>
@@ -38,19 +38,11 @@ const Contacts = () => {
         <title>Contacts</title>
       </Helmet>
 
-      <Box as="h1" mb={5}>
-        Phonebook ☎️
-      </Box>
-
       <ContactForm />
-
-      <Box as="h2" mb={3}>
-        Contacts
-      </Box>
 
       <Filter />
 
-      {isLoading && isFirstLoading.current && <Loader height="10" />}
+      {shouldShowLoader && <Loader height="10" />}
       {error && <ErrorMessage />}
       {hasContacts && <ContactList />}
     </Container>
