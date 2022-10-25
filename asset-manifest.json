@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.12033b42.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.3ad35819.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.2d2a526f.js",
     "static/js/221.0b81dd5f.chunk.js": "/goit-react-hw-08-phonebook/static/js/221.0b81dd5f.chunk.js",
-    "static/js/948.d0a0b11f.chunk.js": "/goit-react-hw-08-phonebook/static/js/948.d0a0b11f.chunk.js",
+    "static/js/948.91eabb3e.chunk.js": "/goit-react-hw-08-phonebook/static/js/948.91eabb3e.chunk.js",
     "static/js/793.6ff5f00a.chunk.js": "/goit-react-hw-08-phonebook/static/js/793.6ff5f00a.chunk.js",
     "static/js/526.8834a06f.chunk.js": "/goit-react-hw-08-phonebook/static/js/526.8834a06f.chunk.js",
     "static/js/270.590ca5ec.chunk.js": "/goit-react-hw-08-phonebook/static/js/270.590ca5ec.chunk.js",
@@ -13,9 +13,9 @@
     "static/media/tele.jpg": "/goit-react-hw-08-phonebook/static/media/tele.7574605d634e4e2d090e.jpg",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.12033b42.css.map": "/goit-react-hw-08-phonebook/static/css/main.12033b42.css.map",
-    "main.3ad35819.js.map": "/goit-react-hw-08-phonebook/static/js/main.3ad35819.js.map",
+    "main.2d2a526f.js.map": "/goit-react-hw-08-phonebook/static/js/main.2d2a526f.js.map",
     "221.0b81dd5f.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/221.0b81dd5f.chunk.js.map",
-    "948.d0a0b11f.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/948.d0a0b11f.chunk.js.map",
+    "948.91eabb3e.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/948.91eabb3e.chunk.js.map",
     "793.6ff5f00a.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/793.6ff5f00a.chunk.js.map",
     "526.8834a06f.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/526.8834a06f.chunk.js.map",
     "270.590ca5ec.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/270.590ca5ec.chunk.js.map",
@@ -25,6 +25,6 @@
   },
   "entrypoints": [
     "static/css/main.12033b42.css",
-    "static/js/main.3ad35819.js"
+    "static/js/main.2d2a526f.js"
   ]
 }
