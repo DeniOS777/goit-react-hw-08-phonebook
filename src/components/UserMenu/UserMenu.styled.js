@@ -7,6 +7,11 @@ export const Wrap = styled.div`
   margin-left: auto;
 `;
 
+export const UserName = styled.p`
+  color: #ffffff;
+  font-weight: 600;
+`;
+
 export const Button = styled.button`
   padding: 8px;
   border-style: none;

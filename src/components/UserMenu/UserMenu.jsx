@@ -3,7 +3,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/authOperations';
 import { useAuth } from 'hooks';
-import { Wrap, Button } from './UserMenu.styled';
+import { Wrap, UserName, Button } from './UserMenu.styled';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ export const UserMenu = () => {
 
   return (
     <Wrap>
-      <p>Hi, {userName}</p>
+      <UserName>Hi, {userName}</UserName>
       <Button type="button" onClick={logOutUser}>
         Logout
       </Button>

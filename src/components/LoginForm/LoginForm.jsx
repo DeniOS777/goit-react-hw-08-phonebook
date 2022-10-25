@@ -2,7 +2,6 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { Container } from 'components/App.styled';
 import { logIn } from 'redux/auth/authOperations';
 
 const ValidationSchema = Yup.object().shape({
@@ -23,34 +22,32 @@ export const LoginForm = () => {
   };
 
   return (
-    <Container>
-      <Formik
-        validationSchema={ValidationSchema}
-        initialValues={{ email: '', password: '' }}
-        onSubmit={handleSubmmit}
-      >
-        {({ isSubmitting }) => (
-          <Form
-            autoComplete="off"
-            style={{ display: 'flex', flexDirection: 'column' }}
-          >
-            <label htmlFor="email">Email</label>
-            <Field id="email" type="email" name="email" />
-            <ErrorMessage name="email" component="div" />
+    <Formik
+      validationSchema={ValidationSchema}
+      initialValues={{ email: '', password: '' }}
+      onSubmit={handleSubmmit}
+    >
+      {({ isSubmitting }) => (
+        <Form
+          autoComplete="off"
+          style={{ display: 'flex', flexDirection: 'column' }}
+        >
+          <label htmlFor="email">Email</label>
+          <Field id="email" type="email" name="email" />
+          <ErrorMessage name="email" component="div" />
 
-            <label htmlFor="password">Password</label>
-            <Field id="password" type="password" name="password" />
-            <ErrorMessage name="password" component="div" />
-            <button
-              style={{ width: '100px' }}
-              type="submit"
-              disabled={isSubmitting}
-            >
-              Log In
-            </button>
-          </Form>
-        )}
-      </Formik>
-    </Container>
+          <label htmlFor="password">Password</label>
+          <Field id="password" type="password" name="password" />
+          <ErrorMessage name="password" component="div" />
+          <button
+            style={{ width: '100px' }}
+            type="submit"
+            disabled={isSubmitting}
+          >
+            Log In
+          </button>
+        </Form>
+      )}
+    </Formik>
   );
 };

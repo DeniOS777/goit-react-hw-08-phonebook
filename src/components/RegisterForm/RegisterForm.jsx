@@ -2,7 +2,6 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { Container } from 'components/App.styled';
 import { signUp } from 'redux/auth/authOperations';
 
 const ValidationSchema = Yup.object().shape({
@@ -25,38 +24,36 @@ export const RegisterForm = () => {
   };
 
   return (
-    <Container>
-      <Formik
-        validationSchema={ValidationSchema}
-        initialValues={{ name: '', email: '', password: '' }}
-        onSubmit={handleSubmmit}
-      >
-        {({ isSubmitting }) => (
-          <Form
-            autoComplete="off"
-            style={{ display: 'flex', flexDirection: 'column' }}
+    <Formik
+      validationSchema={ValidationSchema}
+      initialValues={{ name: '', email: '', password: '' }}
+      onSubmit={handleSubmmit}
+    >
+      {({ isSubmitting }) => (
+        <Form
+          autoComplete="off"
+          style={{ display: 'flex', flexDirection: 'column' }}
+        >
+          <label htmlFor="name">Username</label>
+          <Field id="name" type="text" name="name" />
+          <ErrorMessage name="name" component="div" />
+
+          <label htmlFor="email">Email</label>
+          <Field id="email" type="email" name="email" />
+          <ErrorMessage name="email" component="div" />
+
+          <label htmlFor="password">Password</label>
+          <Field id="password" type="password" name="password" />
+          <ErrorMessage name="password" component="div" />
+          <button
+            style={{ width: '100px' }}
+            type="submit"
+            disabled={isSubmitting}
           >
-            <label htmlFor="name">Username</label>
-            <Field id="name" type="text" name="name" />
-            <ErrorMessage name="name" component="div" />
-
-            <label htmlFor="email">Email</label>
-            <Field id="email" type="email" name="email" />
-            <ErrorMessage name="email" component="div" />
-
-            <label htmlFor="password">Password</label>
-            <Field id="password" type="password" name="password" />
-            <ErrorMessage name="password" component="div" />
-            <button
-              style={{ width: '100px' }}
-              type="submit"
-              disabled={isSubmitting}
-            >
-              Register
-            </button>
-          </Form>
-        )}
-      </Formik>
-    </Container>
+            Register
+          </button>
+        </Form>
+      )}
+    </Formik>
   );
 };

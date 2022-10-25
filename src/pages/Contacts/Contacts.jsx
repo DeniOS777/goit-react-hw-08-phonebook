@@ -13,7 +13,7 @@ import {
 import { fetchContacts } from 'redux/contacts/contactsOperations';
 import { Loader } from 'components/Loader';
 import { ErrorMessage } from 'components/ErrorMessage';
-import { Container } from 'components/App.styled';
+import { Container } from './Contacts.styled';
 
 const Contacts = () => {
   const dispatch = useDispatch();
