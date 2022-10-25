@@ -13,7 +13,7 @@ const Home = () => {
       <HomePageTitle>
         Welcom to your personal phonebook application. Let's go adding your the
         first contact. It will be interesting.
-        <GiRotaryPhone size="96" />
+        <GiRotaryPhone />
       </HomePageTitle>
     </Container>
   );

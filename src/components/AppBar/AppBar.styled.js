@@ -8,5 +8,7 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
+  z-index: 5;
   background-color: #515967;
+  box-shadow: 0px 9px 12px -10px #ffffff, 5px 5px 15px 5px rgb(0 0 0 / 0%);
 `;

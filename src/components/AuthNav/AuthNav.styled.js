@@ -19,7 +19,8 @@ export const Link = styled(NavLink)`
 
   &.active {
     color: #fff;
-    background-color: #f46a0d;
+    background-color: #f15c27;
+    box-shadow: 0px 7px 4px -6px #ffffff, 5px 5px 10px 4px rgb(0 0 0 / 0%);
   }
 
   &:hover:not(.active),

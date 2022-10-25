@@ -24,7 +24,7 @@ export const Layout = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <BsGithub size="20" />
+              <BsGithub size="20" aria-label="github" />
             </Link>
             Developed by Denis Moskalenko
           </Text>

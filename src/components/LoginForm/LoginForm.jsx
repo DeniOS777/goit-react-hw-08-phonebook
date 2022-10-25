@@ -1,8 +1,16 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { logIn } from 'redux/auth/authOperations';
+import {
+  FormLogin,
+  Label,
+  Input,
+  LogIn,
+  Message,
+  Wrap,
+} from './LoginForm.styled';
 
 const ValidationSchema = Yup.object().shape({
   email: Yup.string()
@@ -12,6 +20,10 @@ const ValidationSchema = Yup.object().shape({
     .min(4, 'Should be more 4 characters')
     .required('This field is required'),
 });
+
+const Error = ({ name }) => (
+  <ErrorMessage name={name} render={msg => <Message>{msg}</Message>} />
+);
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -28,25 +40,33 @@ export const LoginForm = () => {
       onSubmit={handleSubmmit}
     >
       {({ isSubmitting }) => (
-        <Form
-          autoComplete="off"
-          style={{ display: 'flex', flexDirection: 'column' }}
-        >
-          <label htmlFor="email">Email</label>
-          <Field id="email" type="email" name="email" />
-          <ErrorMessage name="email" component="div" />
+        <FormLogin autoComplete="off">
+          <Wrap>
+            <Label htmlFor="email">Email</Label>
+            <Input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="123@mail.com"
+            />
+            <Error name="email" />
+          </Wrap>
 
-          <label htmlFor="password">Password</label>
-          <Field id="password" type="password" name="password" />
-          <ErrorMessage name="password" component="div" />
-          <button
-            style={{ width: '100px' }}
-            type="submit"
-            disabled={isSubmitting}
-          >
+          <Wrap>
+            <Label htmlFor="password">Password</Label>
+            <Input
+              id="password"
+              type="password"
+              name="password"
+              placeholder="12345678"
+            />
+            <Error name="password" />
+          </Wrap>
+
+          <LogIn type="submit" disabled={isSubmitting}>
             Log In
-          </button>
-        </Form>
+          </LogIn>
+        </FormLogin>
       )}
     </Formik>
   );

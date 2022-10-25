@@ -1,4 +1,24 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const rotate = keyframes`
+0% {
+  transform: rotate(0deg);
+  transform: scale(1.2);
+}
+25% {
+  transform: rotate(15deg);
+}
+50% {
+    transform: rotate(0deg);
+}
+75% {
+    transform: rotate(-15deg);
+}
+100% {
+    transform: rotate(0deg);
+    transform: scale(1.2);
+}
+`;
 
 export const Container = styled.div`
   padding-top: 32px;
@@ -19,6 +39,13 @@ export const HomePageTitle = styled.h1`
   & svg {
     display: block;
     margin: 0 auto;
+    width: 128px;
+    height: 128px;
     fill: #b92323;
+
+    &:hover {
+      transform: scale(1.2);
+      animation: ${rotate} 200ms linear infinite;
+    }
   }
 `;

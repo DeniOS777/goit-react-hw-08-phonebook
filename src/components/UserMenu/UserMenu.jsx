@@ -1,5 +1,5 @@
 import React from 'react';
-// import { FaUserCheck } from 'react-icons/fa';
+import { FiLogOut } from 'react-icons/fi';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/authOperations';
 import { useAuth } from 'hooks';
@@ -15,7 +15,7 @@ export const UserMenu = () => {
     <Wrap>
       <UserName>Hi, {userName}</UserName>
       <Button type="button" onClick={logOutUser}>
-        Logout
+        <FiLogOut /> Logout
       </Button>
     </Wrap>
   );

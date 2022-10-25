@@ -13,10 +13,13 @@ export const UserName = styled.p`
 `;
 
 export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 8px;
-  border-style: none;
   background-color: #ccc;
   border-radius: 4px;
+  border-style: none;
   cursor: pointer;
   transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
 

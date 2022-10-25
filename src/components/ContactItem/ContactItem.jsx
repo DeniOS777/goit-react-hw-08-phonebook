@@ -32,7 +32,7 @@ const ContactItem = ({ id, name, number, clearFilter }) => {
         <Loader height="35" />
       ) : (
         <ContactDelete onClick={handleDeletingContact} type="button">
-          <VscTrash />
+          <VscTrash aria-label="delete contact" />
         </ContactDelete>
       )}
     </ContactsItem>
