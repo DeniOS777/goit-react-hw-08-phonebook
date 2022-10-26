@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.12033b42.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.9f4bbc2a.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.10713c44.js",
     "static/js/221.80505d0b.chunk.js": "/goit-react-hw-08-phonebook/static/js/221.80505d0b.chunk.js",
-    "static/js/948.aadb3099.chunk.js": "/goit-react-hw-08-phonebook/static/js/948.aadb3099.chunk.js",
+    "static/js/507.e774e11b.chunk.js": "/goit-react-hw-08-phonebook/static/js/507.e774e11b.chunk.js",
     "static/js/293.f8a39cab.chunk.js": "/goit-react-hw-08-phonebook/static/js/293.f8a39cab.chunk.js",
     "static/js/450.6abb133b.chunk.js": "/goit-react-hw-08-phonebook/static/js/450.6abb133b.chunk.js",
     "static/js/270.590ca5ec.chunk.js": "/goit-react-hw-08-phonebook/static/js/270.590ca5ec.chunk.js",
@@ -13,9 +13,9 @@
     "static/media/tele.jpg": "/goit-react-hw-08-phonebook/static/media/tele.7574605d634e4e2d090e.jpg",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.12033b42.css.map": "/goit-react-hw-08-phonebook/static/css/main.12033b42.css.map",
-    "main.9f4bbc2a.js.map": "/goit-react-hw-08-phonebook/static/js/main.9f4bbc2a.js.map",
+    "main.10713c44.js.map": "/goit-react-hw-08-phonebook/static/js/main.10713c44.js.map",
     "221.80505d0b.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/221.80505d0b.chunk.js.map",
-    "948.aadb3099.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/948.aadb3099.chunk.js.map",
+    "507.e774e11b.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/507.e774e11b.chunk.js.map",
     "293.f8a39cab.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/293.f8a39cab.chunk.js.map",
     "450.6abb133b.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/450.6abb133b.chunk.js.map",
     "270.590ca5ec.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/270.590ca5ec.chunk.js.map",
@@ -25,6 +25,6 @@
   },
   "entrypoints": [
     "static/css/main.12033b42.css",
-    "static/js/main.9f4bbc2a.js"
+    "static/js/main.10713c44.js"
   ]
 }
