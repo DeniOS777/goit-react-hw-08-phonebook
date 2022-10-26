@@ -5,7 +5,6 @@ export const Form = styled.form`
   flex-direction: column;
   margin-bottom: ${p => p.theme.space[5]}px;
   padding: ${p => p.theme.space[5]}px;
-  border: ${p => `1px solid ${p.theme.colors.inputBorder}`};
   border-radius: ${p => p.theme.radii.sm};
   background-color: ${p => p.theme.colors.background};
 `;

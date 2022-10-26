@@ -16,7 +16,6 @@ export const ContactsItem = styled.li`
 `;
 
 export const ContactName = styled.p`
-  margin-right: ${p => p.theme.space[3]}px;
   font-size: ${p => p.theme.fontSizes.m};
 
   & a:focus {
@@ -27,8 +26,8 @@ export const ContactName = styled.p`
 
 export const ContactDelete = styled.button`
   display: flex;
-  width: 35px;
-  height: 35px;
+  width: 36px;
+  height: 36px;
   align-items: center;
   justify-content: center;
   padding: 0;
@@ -39,8 +38,8 @@ export const ContactDelete = styled.button`
   transition: background-color 250ms ease-in-out;
 
   & svg {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     fill: ${({ theme }) => theme.colors.red};
     transition: fill 250ms ease-in-out;
   }

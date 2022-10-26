@@ -8,7 +8,6 @@ export const Container = styled.div`
   padding-right: ${p => p.theme.space[5]}px;
   padding-top: ${p => p.theme.space[3]}px;
   padding-bottom: ${p => p.theme.space[3]}px;
-  border: ${({ theme }) => `1px solid ${theme.colors.inputBorder}`};
   border-radius: ${p => p.theme.radii.sm};
   background-color: ${p => p.theme.colors.background};
 `;
