@@ -35,6 +35,8 @@ export const InputSearch = styled.input`
   padding-bottom: ${p => p.theme.space[2]}px;
   padding-left: ${p => p.theme.space[6]}px;
   padding-right: ${p => p.theme.space[2]}px;
+  max-width: 250px;
+  width: 100%;
   font-size: ${p => p.theme.fontSizes.m};
   letter-spacing: 0.03em;
   border: ${p => `1px solid ${p.theme.colors.inputBorder}`};

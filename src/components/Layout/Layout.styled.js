@@ -47,6 +47,6 @@ export const Link = styled.a`
   }
 
   &:hover svg {
-    fill: orangered;
+    fill: #e14913;
   }
 `;
