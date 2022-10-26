@@ -13,6 +13,7 @@ import { fetchContacts } from 'redux/contacts/contactsOperations';
 import { Loader } from 'components/Loader';
 import { ErrorMessage } from 'components/ErrorMessage';
 import { Container } from './Contacts.styled';
+import { toast } from 'react-toastify';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -24,8 +25,10 @@ const Contacts = () => {
 
   useEffect(() => {
     dispatch(fetchContacts()).then(res => {
-      if (res.meta.requestStatus === 'fulfilled')
-        isFirstLoading.current = false;
+      if (res.meta.requestStatus === 'fulfilled') {
+        return (isFirstLoading.current = false);
+      }
+      return toast.error('Something went wrong...🤷‍♂️');
     });
   }, [dispatch]);
 

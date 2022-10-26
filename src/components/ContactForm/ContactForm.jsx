@@ -56,7 +56,10 @@ const ContactForm = () => {
     dispatch(addContact({ name, number })).then(res => {
       if (res.meta.requestStatus === 'fulfilled') {
         successfullyAddedContactNotification(name);
-        setIsAdding(false);
+        return setIsAdding(false);
+      } else {
+        failedAddedContactNotification(name);
+        return setIsAdding(false);
       }
     });
     resetForm();
@@ -73,6 +76,10 @@ const ContactForm = () => {
 
   function alreadyHasContactNotification(name) {
     return toast.info(`The contact with name "${name}" is already in contacts`);
+  }
+
+  function failedAddedContactNotification(name) {
+    return toast.error(`The contact with name "${name}" was not added`);
   }
 
   return (

@@ -16,11 +16,20 @@ const ContactItem = ({ id, name, number, clearFilter }) => {
     setIsDeleting(true);
     dispatch(deleteContact(id)).then(res => {
       if (res.meta.requestStatus === 'fulfilled') {
-        toast.success(`The contact named ${name} deleted successfully`);
-        clearFilter();
+        successfullyDeletedContactNotification(name);
+        return clearFilter();
       }
+      return failedDeletedContactNotification(name);
     });
   };
+
+  function successfullyDeletedContactNotification(name) {
+    return toast.success(`The contact named ${name} deleted successfully`);
+  }
+
+  function failedDeletedContactNotification(name) {
+    return toast.error(`The contact named ${name} was not deleted 🤷‍♂️`);
+  }
 
   return (
     <ContactsItem>
