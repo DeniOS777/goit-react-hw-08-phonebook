@@ -4,7 +4,7 @@ export const ContactsItem = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: ${p => p.theme.space[5]}px;
+  padding-left: ${p => p.theme.space[4]}px;
   padding-right: ${p => p.theme.space[3]}px;
   padding-top: ${p => p.theme.space[3]}px;
   padding-bottom: ${p => p.theme.space[3]}px;
