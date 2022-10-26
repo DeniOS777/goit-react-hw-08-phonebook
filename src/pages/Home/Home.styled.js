@@ -38,11 +38,11 @@ export const HomePageTitle = styled.h1`
   text-align: center;
 
   @media (max-width: 767px) {
-    font-size: 36px;
+    font-size: 28px;
   }
 
   @media (max-width: 480px) {
-    font-size: 28px;
+    font-size: 18px;
   }
 
   & svg {
@@ -55,6 +55,16 @@ export const HomePageTitle = styled.h1`
     &:hover {
       transform: scale(1.2);
       animation: ${rotate} 200ms linear infinite;
+    }
+
+    @media (max-width: 767px) {
+      width: 96px;
+      height: 96px;
+    }
+
+    @media (max-width: 480px) {
+      width: 64px;
+      height: 64px;
     }
   }
 `;
