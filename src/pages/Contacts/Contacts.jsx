@@ -14,6 +14,7 @@ import { Loader } from 'components/Loader';
 import { ErrorMessage } from 'components/ErrorMessage';
 import { Container } from './Contacts.styled';
 import { toast } from 'react-toastify';
+import { Wrap } from './Contacts.styled';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -41,9 +42,10 @@ const Contacts = () => {
         <title>Contacts</title>
       </Helmet>
 
-      <ContactForm />
-
-      <Filter />
+      <Wrap>
+        <ContactForm />
+        <Filter />
+      </Wrap>
 
       {shouldShowLoader && <Loader height="10" />}
       {error && <ErrorMessage />}
