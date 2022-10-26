@@ -32,9 +32,18 @@ export const Container = styled.div`
 export const HomePageTitle = styled.h1`
   margin: 0 auto;
   max-width: 900px;
-  font-size: 32px;
+  font-size: 42px;
+  letter-spacing: 0.02em;
   color: #ffffff;
   text-align: center;
+
+  @media (max-width: 767px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+  }
 
   & svg {
     display: block;

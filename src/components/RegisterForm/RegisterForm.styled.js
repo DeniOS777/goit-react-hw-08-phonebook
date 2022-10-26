@@ -1,7 +1,7 @@
 import { Form, Field } from 'formik';
 import styled from 'styled-components';
 
-export const FormLogin = styled(Form)`
+export const FormRegister = styled(Form)`
   display: flex;
   flex-direction: column;
   padding: 32px;
@@ -40,7 +40,7 @@ export const Input = styled(Field)`
   }
 `;
 
-export const LogIn = styled.button`
+export const Register = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;

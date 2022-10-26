@@ -33,6 +33,7 @@ export const Text = styled.p`
   justify-content: center;
   align-items: center;
   color: #ffffff;
+  letter-spacing: 0.02em;
 `;
 
 export const Link = styled.a`
@@ -40,4 +41,12 @@ export const Link = styled.a`
   padding: 8px;
   color: currentColor;
   text-decoration: none;
+
+  & svg {
+    transition: fill 250ms ease-in-out;
+  }
+
+  &:hover svg {
+    fill: orangered;
+  }
 `;

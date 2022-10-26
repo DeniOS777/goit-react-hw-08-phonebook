@@ -11,8 +11,8 @@ const Home = () => {
       </Helmet>
 
       <HomePageTitle>
-        Welcom to your personal phonebook application. Let's go adding your the
-        first contact. It will be interesting.
+        Welcom 🙋‍♀️ to your personal phonebook application. Let's go adding your
+        the first contact. It will be interesting 😉
         <GiRotaryPhone />
       </HomePageTitle>
     </Container>

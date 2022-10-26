@@ -39,7 +39,7 @@ export const LoginForm = () => {
       initialValues={{ email: '', password: '' }}
       onSubmit={handleSubmmit}
     >
-      {({ isSubmitting }) => (
+      {({ isSubmitting, isValid }) => (
         <FormLogin autoComplete="off">
           <Wrap>
             <Label htmlFor="email">Email</Label>
@@ -63,7 +63,7 @@ export const LoginForm = () => {
             <Error name="password" />
           </Wrap>
 
-          <LogIn type="submit" disabled={isSubmitting}>
+          <LogIn type="submit" disabled={isSubmitting || !isValid}>
             Log In
           </LogIn>
         </FormLogin>

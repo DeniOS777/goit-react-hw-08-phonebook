@@ -1,8 +1,16 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { signUp } from 'redux/auth/authOperations';
+import {
+  FormRegister,
+  Label,
+  Input,
+  Register,
+  Message,
+  Wrap,
+} from './RegisterForm.styled';
 
 const ValidationSchema = Yup.object().shape({
   name: Yup.string().required('This field is required'),
@@ -13,6 +21,10 @@ const ValidationSchema = Yup.object().shape({
     .min(4, 'Should be more 4 characters')
     .required('This field is required'),
 });
+
+const Error = ({ name }) => (
+  <ErrorMessage name={name} render={msg => <Message>{msg}</Message>} />
+);
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -29,30 +41,45 @@ export const RegisterForm = () => {
       initialValues={{ name: '', email: '', password: '' }}
       onSubmit={handleSubmmit}
     >
-      {({ isSubmitting }) => (
-        <Form
-          autoComplete="off"
-          style={{ display: 'flex', flexDirection: 'column' }}
-        >
-          <label htmlFor="name">Username</label>
-          <Field id="name" type="text" name="name" />
-          <ErrorMessage name="name" component="div" />
+      {({ isSubmitting, isValid }) => (
+        <FormRegister autoComplete="off">
+          <Wrap>
+            <Label htmlFor="name">Username</Label>
+            <Input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Derek Menson"
+            />
+            <Error name="name" />
+          </Wrap>
 
-          <label htmlFor="email">Email</label>
-          <Field id="email" type="email" name="email" />
-          <ErrorMessage name="email" component="div" />
+          <Wrap>
+            <Label htmlFor="email">Email</Label>
+            <Input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="123@mail.com"
+            />
+            <Error name="email" />
+          </Wrap>
 
-          <label htmlFor="password">Password</label>
-          <Field id="password" type="password" name="password" />
-          <ErrorMessage name="password" component="div" />
-          <button
-            style={{ width: '100px' }}
-            type="submit"
-            disabled={isSubmitting}
-          >
+          <Wrap>
+            <Label htmlFor="password">Password</Label>
+            <Input
+              id="password"
+              type="password"
+              name="password"
+              placeholder="12345678"
+            />
+            <Error name="password" />
+          </Wrap>
+
+          <Register type="submit" disabled={isSubmitting || !isValid}>
             Register
-          </button>
-        </Form>
+          </Register>
+        </FormRegister>
       )}
     </Formik>
   );
