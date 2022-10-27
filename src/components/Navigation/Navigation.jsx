@@ -9,7 +9,9 @@ export const Navigation = () => {
 
   return (
     <HeaderNav>
-      <Link to="/home">Home</Link>
+      <Link to="/" end>
+        Home
+      </Link>
       {isLoggedIn && <Link to="/contacts">Contacts</Link>}
       {isLoggedIn && !isRefreshUser ? <UserMenu /> : <AuthNav />}
     </HeaderNav>

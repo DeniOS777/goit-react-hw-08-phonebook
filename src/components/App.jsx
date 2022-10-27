@@ -23,7 +23,7 @@ const App = () => {
     !isRefreshUser && (
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="home" element={<Home />} />
+          <Route index element={<Home />} />
           <Route
             path="register"
             element={
@@ -45,7 +45,7 @@ const App = () => {
               <PrivatRoute redirectTo="/login" component={<Contacts />} />
             }
           />
-          <Route path="*" element={<Navigate to="home" />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
     )
