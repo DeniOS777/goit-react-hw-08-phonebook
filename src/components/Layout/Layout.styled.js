@@ -16,14 +16,14 @@ export const Main = styled.main`
 `;
 
 export const Container = styled.div`
-  padding-bottom: 20px;
-  padding-top: 20px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-bottom: ${p => p.theme.space[5]}px;
+  padding-top: ${p => p.theme.space[5]}px;
+  padding-left: ${p => p.theme.space[4]}px;
+  padding-right: ${p => p.theme.space[4]}px;
 `;
 
 export const Footer = styled.footer`
-  background-color: #303846;
+  background-color: ${p => p.theme.colors.footer};
   text-align: center;
 `;
 
@@ -32,13 +32,13 @@ export const Text = styled.p`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  color: ${p => p.theme.colors.white};
   letter-spacing: 0.02em;
 `;
 
 export const Link = styled.a`
   display: inline-flex;
-  padding: 8px;
+  padding: ${p => p.theme.space[3]}px;
   color: currentColor;
   text-decoration: none;
 
@@ -47,6 +47,6 @@ export const Link = styled.a`
   }
 
   &:hover svg {
-    fill: #e14913;
+    fill: ${p => p.theme.colors.link};
   }
 `;

@@ -14,7 +14,7 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   position: relative;
-  padding-right: 8px;
+  padding-right: ${p => p.theme.space[3]}px;
 
   & svg {
     position: absolute;

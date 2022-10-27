@@ -1,18 +1,17 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { UserMenu } from 'components/UserMenu';
-import { selectorLoggedIn } from 'redux/auth/authSelectors';
 import { AuthNav } from 'components/AuthNav';
 import { HeaderNav, Link } from './Navigation.styled';
+import { useAuth } from 'hooks';
 
 export const Navigation = () => {
-  const isLoggedIn = useSelector(selectorLoggedIn);
+  const { isLoggedIn, isRefreshUser } = useAuth();
 
   return (
     <HeaderNav>
       <Link to="/home">Home</Link>
       {isLoggedIn && <Link to="/contacts">Contacts</Link>}
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      {isLoggedIn && !isRefreshUser ? <UserMenu /> : <AuthNav />}
     </HeaderNav>
   );
 };

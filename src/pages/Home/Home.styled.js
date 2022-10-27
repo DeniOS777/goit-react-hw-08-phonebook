@@ -21,28 +21,35 @@ const rotate = keyframes`
 `;
 
 export const Container = styled.div`
-  padding-top: 32px;
-  padding-bottom: 32px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-top: ${p => p.theme.space[6]}px;
+  padding-bottom: ${p => p.theme.space[6]}px;
+  padding-left: ${p => p.theme.space[4]}px;
+  padding-right: ${p => p.theme.space[4]}px;
   height: calc(100vh - 127px);
   overflow-y: auto;
+
+  @media (max-width: 480px) {
+    padding-top: ${p => p.theme.space[7]}px;
+    padding-bottom: ${p => p.theme.space[7]}px;
+  }
 `;
 
 export const HomePageTitle = styled.h1`
   margin: 0 auto;
   max-width: 900px;
-  font-size: 42px;
+  font-size: ${p => p.theme.fontSizes.xl};
   letter-spacing: 0.02em;
-  color: #ffffff;
+  color: ${p => p.theme.colors.white};
   text-align: center;
 
   @media (max-width: 767px) {
-    font-size: 28px;
+    font-size: ${p => p.theme.fontSizes.xm};
   }
 
   @media (max-width: 480px) {
-    font-size: 18px;
+    font-size: ${p => p.theme.fontSizes.lm};
+    line-height: ${p => p.theme.lineHeights.body};
+    letter-spacing: 0.03em;
   }
 
   & svg {
@@ -50,7 +57,7 @@ export const HomePageTitle = styled.h1`
     margin: 0 auto;
     width: 128px;
     height: 128px;
-    fill: #b92323;
+    fill: ${p => p.theme.colors.redHover};
 
     &:hover {
       transform: scale(1.2);
