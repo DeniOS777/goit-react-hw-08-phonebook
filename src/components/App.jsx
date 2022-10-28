@@ -6,8 +6,8 @@ import { refreshUser } from 'redux/auth/authOperations';
 import { PrivatRoute, RestrictedRoute } from 'components/Routes';
 import { useAuth } from 'hooks';
 import { TextLoader } from './TextLoader';
+import Home from 'pages/Home';
 
-const Home = lazy(() => import('pages/Home'));
 const Contacts = lazy(() => import('pages/Contacts'));
 const Register = lazy(() => import('pages/Register'));
 const Login = lazy(() => import('pages/Login'));
@@ -21,7 +21,7 @@ const App = () => {
   }, [dispatch]);
 
   return isRefreshUser ? (
-    <TextLoader text="Wait a several minutes please, we are loading your data..."></TextLoader>
+    <TextLoader text="Wait a several minutes please, we are loading your data..." />
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
